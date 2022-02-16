@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Voyage Manager</title>
+</head>
+<body>
+<div >
+    <h1>Voyage List</h1>
+    <a href="/new">Create New Voyage</a>
+    <br/><br/>
+    <table border="1" cellpadding="10">
+        <thead>
+        <tr>
+            <th>Voyage ID</th>
+            <!-- <th>Trajet ID</th>-->
+            <th>LieuD</th>
+            <th>Destination</th>
+            <th>DateD</th>
+            <th>DateDes</th>
+            <th>Company</th>
+            <th>Actions</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr th:each="voyage : ${listVoyages}">
+            <td th:text="${voyage.idvoyage}">Voyage ID</td>
+
+           <!-- <td th:text="${voyage.idtrajet}">Trajet ID</td>-->
+            <td th:text="${voyage.lieud}">LieuD</td>
+            <td th:text="${voyage.dest}">Destination</td>
+            <td th:text="${voyage.dated}">DateD</td>
+            <td th:text="${voyage.datedes}">DateDes</td>
+            <td th:text="${voyage.company}">Company</td>
+            <td>
+                <a th:href="@{'/edit/' + ${voyage.idvoyage}}">Edit</a>
+                &nbsp;&nbsp;&nbsp;
+                <a th:href="@{'/delete/' + ${voyage.idvoyage}}">Delete</a>
+            </td>
+        </tr>
+        </tbody>
+    </table>
+</div>
+
+</body>
+</html>

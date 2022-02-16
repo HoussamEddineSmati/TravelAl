@@ -1,0 +1,15 @@
+server:
+  port: 8761
+eureka:
+  instance:
+    ip-address: true
+  client:
+    register-with-eureka: false
+    server:
+      wait-time-in-ms-when-sync-empty: 0
+      peer-node-connect-timeout-ms: 600000000
+    service-url:
+      defaultZone: http://localhost:8761/eureka/
+
+  server:
+    renewal-percent-threshold: 0.85

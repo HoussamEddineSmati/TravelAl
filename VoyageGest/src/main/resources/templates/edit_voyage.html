@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<div align="center">
+    <h1>Edit Product</h1>
+    <br />
+    <form action="#" th:action="@{/save}" th:object="${voyage}"
+          method="post">
+
+        <table border="0" cellpading="10">
+            <tr>
+                <td>Voyage Id:</td>
+                <td>
+                    <input type="text" th:field="*{idvoyage}" readonly="readonly" />
+                </td>
+            </tr>
+            <tr>
+                <td>Trajet Id:</td>
+                <td>
+                    <input type="text" th:field="*{idtrajet}" readonly="readonly" />
+                </td>
+            </tr>
+            <tr>
+                <td>Lieu de depart:</td>
+                <td>
+                    <input type="text" th:field="*{lieud}" />
+                </td>
+            </tr>
+            <tr>
+                <td>destination:</td>
+                <td><input type="text" th:field="*{dest}" /></td>
+            </tr>
+            <tr>
+                <td>date de depart:</td>
+                <td><input type="text" th:field="*{dated}" /></td>
+            </tr>
+            <tr>
+                <td>date d arriver:</td>
+                <td><input type="text" th:field="*{datedes}" /></td>
+            </tr>
+            <tr>
+                <td>Company:</td>
+                <td><input type="text" th:field="*{company}" /></td>
+            </tr>
+
+            <tr>
+                <td colspan="2"><button type="submit">Save</button> </td>
+            </tr>
+        </table>
+    </form>
+</div>
+</body>
+</html>
